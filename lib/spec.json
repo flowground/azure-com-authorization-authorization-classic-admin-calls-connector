@@ -1,0 +1,328 @@
+{
+    "openapi": "3.0.0",
+    "servers": [
+        {
+            "url": "https://management.azure.com/"
+        }
+    ],
+    "info": {
+        "description": "Role based access control provides you a way to apply granular level policy administration down to individual resources or resource groups. These operations enable you to manage role definitions and role assignments. A role definition describes the set of actions that can be performed on resources. A role assignment grants access to Azure Active Directory users.",
+        "title": "AuthorizationManagementClient",
+        "version": "2015-07-01",
+        "x-apisguru-categories": [
+            "cloud"
+        ],
+        "x-logo": {
+            "url": "https://api.apis.guru/v2/cache/logo/https_assets.onestore.ms_cdnfiles_onestorerolling-1606-01000_shell_v3_images_logo_microsoft.png"
+        },
+        "x-origin": [
+            {
+                "format": "swagger",
+                "url": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/authorization/resource-manager/Microsoft.Authorization/stable/2015-07-01/authorization-ClassicAdminCalls.json",
+                "version": "2.0"
+            }
+        ],
+        "x-preferred": true,
+        "x-providerName": "azure.com",
+        "x-serviceName": "authorization-authorization-ClassicAdminCalls",
+        "x-tags": [
+            "Azure",
+            "Microsoft"
+        ]
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators": {
+            "get": {
+                "description": "Gets service administrator, account administrator, and co-administrators for the subscription.",
+                "operationId": "ClassicAdministrators_List",
+                "parameters": [
+                    {
+                        "description": "The API version to use for this operation.",
+                        "in": "query",
+                        "name": "api-version",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "The ID of the target subscription.",
+                        "in": "path",
+                        "name": "subscriptionId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns an array of administrators.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "ClassicAdministrator list result information.",
+                                    "properties": {
+                                        "nextLink": {
+                                            "description": "The URL to use for getting the next set of results.",
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "description": "An array of administrators.",
+                                            "items": {
+                                                "description": "Classic Administrators",
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "The ID of the administrator.",
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "description": "The name of the administrator.",
+                                                        "type": "string"
+                                                    },
+                                                    "properties": {
+                                                        "description": "Properties for the classic administrator.",
+                                                        "properties": {
+                                                            "emailAddress": {
+                                                                "description": "The email address of the administrator.",
+                                                                "type": "string"
+                                                            },
+                                                            "role": {
+                                                                "description": "The role of the administrator.",
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "type": {
+                                                        "description": "The type of the administrator.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            },
+                            "text/json": {
+                                "schema": {
+                                    "description": "ClassicAdministrator list result information.",
+                                    "properties": {
+                                        "nextLink": {
+                                            "description": "The URL to use for getting the next set of results.",
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "description": "An array of administrators.",
+                                            "items": {
+                                                "description": "Classic Administrators",
+                                                "properties": {
+                                                    "id": {
+                                                        "description": "The ID of the administrator.",
+                                                        "type": "string"
+                                                    },
+                                                    "name": {
+                                                        "description": "The name of the administrator.",
+                                                        "type": "string"
+                                                    },
+                                                    "properties": {
+                                                        "description": "Properties for the classic administrator.",
+                                                        "properties": {
+                                                            "emailAddress": {
+                                                                "description": "The email address of the administrator.",
+                                                                "type": "string"
+                                                            },
+                                                            "role": {
+                                                                "description": "The role of the administrator.",
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "type": {
+                                                        "description": "The type of the administrator.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "ClassicAdministrators"
+                ],
+                "x-ms-examples": {
+                    "GetConfigurations": {
+                        "parameters": {
+                            "api-version": "2015-07-01",
+                            "subscriptionId": "subId"
+                        },
+                        "responses": {
+                            "200": {
+                                "body": {
+                                    "value": [
+                                        {
+                                            "id": "/subscriptions/subId/providers/Microsoft.Authorization/classicAdministrators/classicadminid",
+                                            "name": "classicadminid",
+                                            "properties": {
+                                                "emailAddress": "test@test.com",
+                                                "role": "ServiceAdministrator;AccountAdministrator"
+                                            },
+                                            "type": "Microsoft.Authorization/classicAdministrators"
+                                        },
+                                        {
+                                            "id": "/subscriptions/subId/providers/Microsoft.Authorization/classicAdministrators/classicadminid2",
+                                            "name": "classicadminid2",
+                                            "properties": {
+                                                "emailAddress": "coadmin@test.com",
+                                                "role": "CoAdministrator"
+                                            },
+                                            "type": "Microsoft.Authorization/classicAdministrators"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ClassicAdministrator": {
+                "description": "Classic Administrators",
+                "properties": {
+                    "id": {
+                        "description": "The ID of the administrator.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the administrator.",
+                        "type": "string"
+                    },
+                    "properties": {
+                        "description": "Properties for the classic administrator.",
+                        "properties": {
+                            "emailAddress": {
+                                "description": "The email address of the administrator.",
+                                "type": "string"
+                            },
+                            "role": {
+                                "description": "The role of the administrator.",
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "type": {
+                        "description": "The type of the administrator.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ClassicAdministratorListResult": {
+                "description": "ClassicAdministrator list result information.",
+                "properties": {
+                    "nextLink": {
+                        "description": "The URL to use for getting the next set of results.",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "An array of administrators.",
+                        "items": {
+                            "description": "Classic Administrators",
+                            "properties": {
+                                "id": {
+                                    "description": "The ID of the administrator.",
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "description": "The name of the administrator.",
+                                    "type": "string"
+                                },
+                                "properties": {
+                                    "description": "Properties for the classic administrator.",
+                                    "properties": {
+                                        "emailAddress": {
+                                            "description": "The email address of the administrator.",
+                                            "type": "string"
+                                        },
+                                        "role": {
+                                            "description": "The role of the administrator.",
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "type": {
+                                    "description": "The type of the administrator.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "ClassicAdministratorProperties": {
+                "description": "Classic Administrator properties.",
+                "properties": {
+                    "emailAddress": {
+                        "description": "The email address of the administrator.",
+                        "type": "string"
+                    },
+                    "role": {
+                        "description": "The role of the administrator.",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "parameters": {
+            "SubscriptionIdParameter": {
+                "description": "The ID of the target subscription.",
+                "in": "path",
+                "name": "subscriptionId",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            }
+        },
+        "securitySchemes": {
+            "azure_auth": {
+                "description": "Azure Active Directory OAuth2 Flow",
+                "type": "oauth2",
+                "flows": {
+                    "implicit": {
+                        "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+                        "scopes": {
+                            "user_impersonation": "impersonate your user account"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
